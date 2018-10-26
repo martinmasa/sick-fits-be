@@ -5,6 +5,7 @@ const ERROR = 2;
 
 module.exports = {
   root: true,
+  'parser': 'babel-eslint',
   'extends': [
     'prettier'
   ],
