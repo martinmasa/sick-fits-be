@@ -12,6 +12,21 @@ const mutations = {
     );
 
     return item;
+  },
+  updateItem(parent, args, context, info) {
+    // copy properties to be updated
+    const updateData = { ...args };
+    // delete ID as cannot be updated
+    delete updateData.id;
+
+    // run update data
+    return context.db.mutation.updateItem(
+      {
+        data: updateData,
+        where: { id: args.id }
+      },
+      info
+    );
   }
 };
 
