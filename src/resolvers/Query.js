@@ -9,8 +9,7 @@ const Query = {
       return null;
     }
 
-    console.log(context.request.userId);
-    return context.db.query.user({ where: { id: 'cjr6qvzonhfuo0950jojojkiw' } }, info);
+    return context.db.query.user({ where: { id: context.request.userId } }, info);
   }
 };
 
