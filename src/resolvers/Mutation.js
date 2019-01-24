@@ -79,6 +79,10 @@ const mutations = {
     });
 
     return user;
+  },
+  async signout(parent, args, context, info) {
+    context.response.clearCookie('token');
+    return { message: 'Over and out!' };
   }
 };
 
